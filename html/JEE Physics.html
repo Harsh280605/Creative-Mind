@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Physics Quiz</title>
+    <style>
+        body {
+            background-image: url("backwallpaper.jpg");
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .quiz-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 8px;
+        }
+
+        .result p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>JEE Physics Quiz</h1>
+        <div id="question-container"></div>
+        <button id="next-btn">Next</button>
+        <div id="result-container"></div>
+    </div>
+
+    <script>
+        const jeePhysicsQuestions = [
+            {
+                question: "What is the SI unit of electric charge?",
+                options: ["Ampere", "Volt", "Coulomb", "Ohm"],
+                answer: "Coulomb"
+            },
+            {
+                question: "What is the speed of light in vacuum?",
+                options: ["3 x 10^8 m/s", "2 x 10^8 m/s", "4 x 10^8 m/s", "5 x 10^8 m/s"],
+                answer: "3 x 10^8 m/s"
+            },
+            {
+                question: "Which of the following is not a vector quantity?",
+                options: ["Force", "Velocity", "Mass", "Acceleration"],
+                answer: "Mass"
+            },
+            {
+                question: "What is the unit of capacitance?",
+                options: ["Farad", "Ohm", "Hertz", "Watt"],
+                answer: "Farad"
+            },
+            {
+                question: "What is the formula for Newton's second law of motion?",
+                options: ["F = ma", "F = mgh", "F = mv^2", "F = m"],
+                answer: "F = ma"
+            },
+            {
+                question: "Which law describes the relationship between the pressure and volume of a gas?",
+                options: ["Boyle's Law", "Charles's Law", "Gay-Lussac's Law", "Avogadro's Law"],
+                answer: "Boyle's Law"
+            },
+            {
+                question: "What is the SI unit of energy?",
+                options: ["Joule", "Watt", "Newton", "Coulomb"],
+                answer: "Joule"
+            },
+            {
+                question: "What is the refractive index of air?",
+                options: ["1.00", "1.33", "1.52", "1.67"],
+                answer: "1.00"
+            },
+            {
+                question: "Which of the following is a scalar quantity?",
+                options: ["Force", "Velocity", "Acceleration", "Work"],
+                answer: "Work"
+            },
+            {
+                question: "What is the formula for Ohm's law?",
+                options: ["V = IR", "V = I/R", "I = VR", "I = V/R"],
+                answer: "V = IR"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        const questionContainer = document.getElementById("question-container");
+        const resultContainer = document.getElementById("result-container");
+
+        function displayQuestion() {
+            const currentQuestion = jeePhysicsQuestions[currentQuestionIndex];
+
+            questionContainer.innerHTML = `
+                <div class="question">
+                    <p>${currentQuestionIndex + 1}. ${currentQuestion.question}</p>
+                    ${currentQuestion.options.map(option => `
+                        <label>
+                            <input type="radio" name="answer" value="${option}">
+                            ${option}
+                        </label>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function checkAnswer() {
+            const selectedOption = document.querySelector('input[name="answer"]:checked');
+
+            if (selectedOption) {
+                if (selectedOption.value === jeePhysicsQuestions[currentQuestionIndex].answer) {
+                    score++;
+                }
+            }
+        }
+
+        function nextQuestion() {
+            checkAnswer();
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < jeePhysicsQuestions.length) {
+                displayQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            const scorePercentage = (score / jeePhysicsQuestions.length) * 100;
+            resultContainer.innerHTML = `You scored ${score} out of ${jeePhysicsQuestions.length}.`;
+
+            if (scorePercentage >= 75) {
+                resultContainer.innerHTML += "<p>Congratulations! You qualify for a certificate.</p>";
+                // Redirect to claim_certificate.html if needed
+                 window.location.href = "Physics.html";
+            } else {
+                resultContainer.innerHTML += "<p>Unfortunately, you did not qualify for a certificate.</p>";
+                // Redirect to jee.html if needed
+                window.location.href = "jee.html";
+            }
+
+            // Hide the question container and next button
+            questionContainer.style.display = 'none';
+            document.getElementById("next-btn").style.display = 'none';
+        }
+
+        // Load the first question when the page is loaded
+        window.addEventListener('load', () => {
+            displayQuestion();
+        });
+
+        // Attach next question function to the Next button click event
+        document.getElementById("next-btn").addEventListener('click', nextQuestion);
+    </script>
+</body>
+</html>

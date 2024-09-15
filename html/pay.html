@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access JEE Course</title>
+    <!-- Include Razorpay Checkout script -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <style>
+        body {
+            background-image: url("backwallpaper.jpg");
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        #payButton {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        #payButton:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Unlock Lifetime Access to JEE Course</h1>
+        <p>Access our comprehensive JEE preparation course with lifetime access. Master key concepts, practice questions, and more.</p>
+        <p>After successful payment, you'll have immediate access to the course.</p>
+        <button id="payButton">Enroll Now (₹1)</button>
+    </div>
+
+    <script>
+        // Replace with your Razorpay API key
+        var razorpayKey = 'rzp_test_TxHi0KJVBgODsS';
+
+        // Create a Razorpay instance
+        var razorpay = new Razorpay({
+            key: razorpayKey,
+            // You can add more options here if needed
+        });
+
+        // Define payment options
+        var options = {
+            amount: 100, // Amount in paise (₹1 in paise)
+            currency: 'INR',
+            receipt: 'order_receipt', // Replace with your own order ID or receipt ID
+            payment_capture: '1' // Auto capture payment after successful payment
+        };
+
+        // Function to handle payment success
+        function handlePaymentSuccess(response) {
+            console.log('Payment successful:', response);
+            // Redirect to jee.html after successful payment
+            window.location.href = 'jee.html';
+        }
+
+        // Function to handle payment failure
+        function handlePaymentError(error) {
+            console.error('Payment failed:', error);
+            alert('Payment failed: ' + error.description);
+        }
+
+        // Function to initiate payment
+        document.getElementById('payButton').addEventListener('click', function () {
+            console.log('Initiating payment...');
+            razorpay.open(options, function (response) {
+                console.log('Payment response:', response);
+                // Callback function when payment is successful
+                handlePaymentSuccess(response);
+            });
+        });
+    </script>
+</body>
+</html>

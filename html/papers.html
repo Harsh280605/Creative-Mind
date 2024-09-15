@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="subjects.css">
+        <style>
+            header {
+                background-color: #fbf9f9;
+                color: #fff;
+                padding: 40px 0; /* Increased padding */
+                text-align: center;
+                font-size: 40px; /* Increased font size */
+                position: fixed; /* Make the header fixed */
+                width: 100%; /* Set the width to full */
+                top: 0; /* Position at the top */
+                left: 0; /* Align with the left */
+                z-index: 1000; /* Set a high z-index to ensure it appears above other content */
+            }
+    
+            header img {
+                position: absolute; /* Position the image absolutely */
+                left: 10px; /* Adjust the left position */
+                top: 50%; /* Center vertically */
+                transform: translateY(-50%); /* Adjust for vertical centering */
+                width: 100px; /* Adjust the width of the image */
+                height: 100px; /* Adjust the height of the image */
+            }
+    
+            header ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                display: inline-block;
+                vertical-align: middle;
+            }
+    
+            header ul li {
+                display: inline-block;
+                margin-right: 20px;
+            }
+    
+            header ul li:last-child {
+                margin-right: 0;
+            }
+    
+            header ul li a {
+                color: #040404;
+                text-decoration: none;
+            }
+    
+            header ul li a:hover {
+                color: #f3082b;
+            }
+    
+            /* Add some space at the top to prevent content from being hidden behind the fixed header */
+            body {
+                margin-top: 120px; /* Adjust as needed */
+            }
+        </style>
+        <script>
+            function redirectTo(destination) {
+                window.location.href = destination;
+            }
+        </script>
+    </head>
+    <body>
+
+        <header>
+            <a href="index1.html"><img src="mind.png" alt="Logo"></a><!-- Add your image here -->
+            <ul>
+                <li><a href="#" onclick="redirectTo('jee.html')">JEE</a></li>
+                <li><a href="#" onclick="redirectTo('gate.html')">GATE</a></li>
+                <li><a href="#" onclick="redirectTo('computer_courses.html')">Computer Courses</a></li>
+            </ul>
+        </header>
+        
+
+        <div class="title2" id="sample_papers">
+            <span>GATE Sample Papers 2014-19</span>
+            <div class="shortdesc2">
+                <p>Practice more and more question papers</p>
+            </div>
+        </div>
+    
+        <div class="sample">
+            <ul>
+                <li><a href="GATE2014_CS.pdf" target="_blank">CS Sample Paper 2014</a></li>
+                <li><a href="GATE2014_CY.pdf" target="_blank">CY Sample Paper 2014</a></li>
+                <li><a href="GATE2014_MA.pdf" target="_blank">MA Sample Paper 2014</a></li>
+                <li><a href="https://www.iitr.ac.in/gate/gate14.html" target="_blank">2014 Other Sample Papers</a></li>
+            </ul>
+            <ul>
+                <li><a href="https://www.iitr.ac.in/gate/papers/GATE2015/GATE2015_CS-1.pdf?download_file=papers/GATE2015/GATE2015_CS-1.pdf" target="_blank">CS Sample Paper 2015</a></li>
+                <li><a href="https://www.iitr.ac.in/gate/papers/GATE2015/GATE2015_CY.pdf?download_file=papers/GATE2015/GATE2015_CY.pdf" target="_blank">CY Sample Paper 2015</a></li>
+                <li><a href="https://www.iitr.ac.in/gate/papers/GATE2015/GATE2015_MA.pdf?download_file=papers/GATE2015/GATE2015_MA.pdf" target="_blank">MA Sample Paper 2015</a></li>
+                <li><a href="https://www.iitr.ac.in/gate/gate15.html" target="_blank">2015 Other Sample Papers</a></li>
+            </ul>
+            <ul>
+                <li><a href="https://drive.google.com/file/d/11OOjvNF_zzeeeB2oHAi8R5fndsikrjJi/view" target="_blank">CS Sample Paper 2016</a></li>
+                <li><a href="https://drive.google.com/file/d/1m-fnzBk6kXSC_ld1KgPSluSVEClMRrgb/view" target="_blank">CY Sample Paper 2016</a></li>
+                <li><a href="https://drive.google.com/file/d/1ym61FkutFkIOb_jDaR3LQ4bMaXOMoi2Q/view" target="_blank">MA Sample Paper 2016</a></li>
+                <li><a href="https://gate.iitm.ac.in/gate2019/previousqp.php" target="_blank">2016 Other Sample Papers</a></li>
+            </ul>
+        </div>
+        <div class="sample lastSample">
+            <ul>
+                <li><a href="https://drive.google.com/file/d/1BI5E8xMyMMJpvGYbtSoN_bAXOHz67dll/view" target="_blank">CS Sample Paper 2017</a></li>
+                <li><a href="https://drive.google.com/file/d/1TDOrIXtL13KOa9N4HyqtAF3Q8qRzQfd8/view" target="_blank">CY Sample Paper 2017</a></li>
+                <li><a href="https://drive.google.com/file/d/116Njk9Hxq3j3CBAq_MFfVa_rE3cec6KT/view" target="_blank">MA Sample Paper 2017</a></li>
+                <li><a href="https://gate.iitm.ac.in/gate2019/previousqp17.php" target="_blank">2017 Other Sample Papers</a></li>
+            </ul>
+            <ul>
+                <li><a href="https://drive.google.com/file/d/1pqoma6hhgHhOFl7vrLSTuFXDXl2iC9Kl/view" target="_blank">CS Sample Paper 2018</a></li>
+                <li><a href="https://drive.google.com/file/d/1OJxMbenSrIOgoh2A6Dl0XqzlANTzcZMM/view" target="_blank">CY Sample Paper 2018</a></li>
+                <li><a href="https://drive.google.com/file/d/1vH5wsrei13Hw3lK3yn6jlgC437tVE1is/view" target="_blank">MA Sample Paper 2018</a></li>
+                <li><a href="https://gate.iitm.ac.in/gate2019/previousqp18.php" target="_blank">2018 Other Sample Papers</a></li>
+            </ul>
+            <ul>
+                <li><a href="https://gate.iitm.ac.in/gate2019/pdfs/QP/CS_2019.pdf" target="_blank">CS Sample Paper 2019</a></li>
+                <li><a href="https://gate.iitm.ac.in/gate2019/pdfs/QP/CY_2019.pdf" target="_blank">CY Sample Paper 2019</a></li>
+                <li><a href="https://gate.iitm.ac.in/gate2019/pdfs/QP/MA_2019.pdf" target="_blank">MA Sample Paper 2019</a></li>
+                <li><a href="https://gate.iitm.ac.in/gate2019/Anskey19.php" target="_blank">2019 Other Sample Papers</a></li>
+            </ul>
+        </div>
+
+        <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script>
+  window.botpressWebChat.init({
+      "composerPlaceholder": "Chat with bot",
+      "botConversationDescription": "This chatbot was built surprisingly fast with Botpress",
+      "botId": "12d53a84-c101-4dd0-927e-8ae9040833ee",
+      "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+      "messagingUrl": "https://messaging.botpress.cloud",
+      "clientId": "12d53a84-c101-4dd0-927e-8ae9040833ee",
+      "webhookId": "cc5c95a3-ed2c-4605-93e6-b479434a9d93",
+      "lazySocket": true,
+      "themeName": "prism",
+      "frontendVersion": "v1",
+      "useSessionStorage": true,
+      "enableConversationDeletion": true,
+      "showPoweredBy": true,
+      "theme": "prism",
+      "themeColor": "#2563eb"
+  });
+</script>
+
+    </body>
+</html>

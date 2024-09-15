@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redirect Page</title>
+<style>
+  body {
+	background-image: url("backwallpaper.jpg");
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .topic-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 45%;
+    padding: 20px;
+    margin: 10px;
+    border: 2px solid #100f0f;
+    border-radius: 10px;
+  }
+  .button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  .button:hover {
+    background-color: #0056b3;
+  }
+  .topic-content {
+    width: 45%;
+  }
+  .topic-img {
+    width: 45%;
+  }
+  @media (max-width: 768px) {
+    .topic-box {
+      width: 90%;
+    }
+    .topic-content,
+    .topic-img {
+      width: 100%;
+    }
+  }
+  footer {
+	color: #E5E8EF;
+	background: #000D;
+	padding: 50px 0; 
+}
+footer .footer-container {
+	max-width: 1300px;
+	margin: auto;
+	padding: 0 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap-reverse;
+}
+footer .social-media img{
+	width: 22px;
+}
+footer .logo {
+	width: 180px;
+	color: #fff;
+}
+footer .social-media a{
+	margin-right: 10px;
+	font-size: 22px;
+	text-decoration: none;
+}
+footer .right-col h1{
+	font-size: 26px;
+}
+footer .border{
+	width: 100px;
+	height: 4px;
+	background: linear-gradient(to right, #FA4B37, #DF2771);
+	margin: 2px;
+}
+footer .newsletter-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+footer input::placeholder {
+  color: white !important;
+}
+footer .txtb {
+	flex: 1;
+	padding: 18px 40px;
+	font-size: 16px;
+	background: #343A40;
+	border: none;
+	font-weight: 700;
+	outline: none;
+	border-radius: 5px;
+	min-width: 260px;
+	margin-top: 20px;
+	color: white;
+}
+footer .btn {
+	margin-top: 20px;
+	padding: 18px 40px;
+	font-size: 16px;
+	color: #f1f1f1;
+	background: linear-gradient(to right, #FA4B37, #DF2771);
+	border: none;
+	font-weight: 700;
+	outline: none;
+	border-radius: 5px;
+	margin-left: 20px;
+	cursor: pointer;
+	transition: opacity .3s linear;	
+}
+footer .btn:hover {
+	opacity: .7;
+}
+
+/*PROPERTIES FOR MAKING WEBSITE RESPONSIVE*/
+@media screen and (max-width: 960px) {
+	.footer-container {
+		max-width: 600px;
+	}
+	.right-col {
+		width: 100%;
+		margin-bottom: 60px;
+	}
+	.left-col {
+		width: 100%;
+		text-align: center;
+	}
+	.social-media {
+		display: flex;
+		justify-content: center;
+	}
+	.logo {
+		transition: 1s;
+		margin-left: 30%;
+	}
+	nav ul, .srch, .get-started{
+		display: none;
+	}
+	.menu {
+		display: block;
+	}
+	nav {
+		padding-bottom: 20px;
+		border-bottom: 1px solid #0005;
+		/* position: fixed; */
+		/* top: 0; */
+	}
+	.quote p, .quote h5, .play {
+		justify-content: center;
+		text-align: center;
+	}
+	.quote p {
+		font-size: 30px;
+	}
+	.service-container .right-side img {
+		width: 90%;
+	}
+	.title {
+		margin-top: 0px;
+	}
+	
+}
+@media screen and (max-width: 700px) {
+	footer .btn{
+		margin: 0;
+		width: 100%;
+		margin-top: 20px;
+	}
+	.svg-image img {
+		width: 90%;
+		margin: 20px;
+		/* align-self: center; */
+	}
+}
+
+@media screen and (max-width: 1000px) {	
+	.feedbox form input, .feedbox form .fname{
+		width: 100%;
+	}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="topic-box">
+    <div class="topic-content">
+      <h2>JEE</h2>
+      <p>Learn all the important topics for JEE</p>
+      <a href="aboutjee.html" class="button">Learn More</a>
+	  <a href="jee.html" class="button">Go to course</a>
+    </div>
+    <div class="topic-img">
+      <img src="jee.jpeg" alt="JEE" height="200px" width="200px">
+    </div>
+  </div>
+  <div class="topic-box">
+    <div class="topic-img">
+      <img src="quizz.jpg" alt="Quizz" height="200px" width="200px">
+    </div>
+    <div class="topic-content">
+      <h2>Quizz</h2>
+      <p>Test your progress</p>
+      <a href="quiz.html" class="button">Takeup Quiz </a>
+    </div>
+  </div>
+  <div class="topic-box">
+    <div class="topic-content">
+      <h2>Computer Courses</h2>
+      <p>Learn all the important topics for learning Computer</p>
+      <a href="aboutcom.html" class="button">Learn More</a>
+	  <a href="computer_courses.html" class="button">Go to course</a>
+    </div>
+    <div class="topic-img">
+      <img src="computer.jpeg" alt="Computer Courses" height="200px" width="200px">
+    </div>
+  </div>
+  <div class="topic-box">
+    <div class="topic-img">
+      <img src="gate.jpeg" alt="GATE" height="200px" width="200px">
+    </div>
+    <div class="topic-content">
+      <h2>GATE</h2>
+      <p>Learn all the important topics for GATE</p>
+      <a href="aboutgate.html" class="button">Learn More</a>
+	  <a href="gate.html" class="button">Go to course</a>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script>
+  window.botpressWebChat.init({
+      "composerPlaceholder": "Chat with bot",
+      "botConversationDescription": "This chatbot was built surprisingly fast with Botpress",
+      "botId": "12d53a84-c101-4dd0-927e-8ae9040833ee",
+      "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+      "messagingUrl": "https://messaging.botpress.cloud",
+      "clientId": "12d53a84-c101-4dd0-927e-8ae9040833ee",
+      "webhookId": "cc5c95a3-ed2c-4605-93e6-b479434a9d93",
+      "lazySocket": true,
+      "themeName": "prism",
+      "frontendVersion": "v1",
+      "useSessionStorage": true,
+      "enableConversationDeletion": true,
+      "showPoweredBy": true,
+      "theme": "prism",
+      "themeColor": "#2563eb"
+  });
+</script>
+
+<!-- FOOTER -->
+<footer>
+	<div class="footer-container">
+		<div class="left-col">
+			<a href="index1.html"><img src="mind.png" style="width: 200px;"></a>
+			<div class="logo"></div>
+			<div class="social-media">
+				<a href="#"><img src="fb.png"></a>
+				<a href="#"><img src="insta.png"></a>
+				<a href="#"><img src="tt.png"></a>
+				<a href="#"><img src="ytube.png"></a>
+				<a href="#"><img src="linkedin.png"></a>
+			</div><br><br>
+			<p class="rights-text">Copyright © 2024 Created By Harsh S,Aadithya KG All Rights Reserved.</p>
+			<br><p><img src="location.png">Sri venkataswara college of engineering<br>Vepery, Chennai-600007</p><br>
+			<p><img src="phone.png"> +91-1234-567-890<br><img src="mail.png">&nbsp; Example@gmail.com</p>
+		</div>
+		<div class="right-col">
+			<h1 style="color: #fff">Our Newsletter</h1>
+			<div class="border"></div><br>
+			<p>Enter Your Email to get our News and updates.</p>
+			<form class="newsletter-form" action="mailto:harshbafna18@gmail.com">
+				<input class="txtb" type="email" placeholder="Enter Your Email">
+				<input class="btn" type="submit" value="Submit">
+			</form>
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>
